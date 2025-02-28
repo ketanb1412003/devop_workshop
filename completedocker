@@ -1,0 +1,20 @@
+command-1: mkdir my-apache-website #this will create a my-acache-website directory.
+command 2: cd my-apache-website #this will take you to my-apache-website directory.
+step 1: Go to free-css.com and browse for a template.
+downloaded it as a ZIP file named my-website-template.zip
+Now Create a new file named Dockerfile in the same directory as the website folder.
+Open Dockerfile in a text editor and add the following:
+a): FROM httpd:latest
+b): COPY website/ /usr/local/apache2/htdocs/
+c): EXPOSE 80
+Now,
+command 3: unzip my-website-template.zip -d website #this will unzip the my-website-template.zip file
+command 4: nano Dockerfile #this will create a dockerfile
+command 5: sudo apt-get update && apt-get install -y docker-buildx #this will install the buildx(buildkit).
+command 6: sudo docker build -t my-apache-image . #this will build a docker image and tags the image
+with name my-apache-image
+command 7: sudo docker run -d -p 8080:80 my-apache-image #this will runs a Docker container and
+port 8080 on the host machine in the container
+To access the website:
+we can web browse "http://localhost:8080"
+and we can see our website template.
