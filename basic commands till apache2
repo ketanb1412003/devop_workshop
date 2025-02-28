@@ -1,0 +1,32 @@
+ls=list files and directories
+cd =change directory
+pwd =show current directory
+mkdir =create a directory
+rm -rf =removes files or directories
+or  rmdir <directory name>  
+useradd <username> =add a user
+groupadd <groupname> =add a group
+usermod -aG <groupname> <username> =adding a user to a group
+id username =check user details
+userdel -r <username> =delete a user
+date --help =get all commands related to date
+cd .. =to go back to previous directory
+nano <filename> =to create file
+cat <file to be copied> <folder/directory in which to copy> =copy a file
+mv <file to be move> <folder/directory in which to move> =move a file
+sudo -i =go to super user
+cat /etc/passwd =to get user details
+su - <user name to switch with> =to switch between user
+cat /etc/group =to access group
+getent groups =to check for available groups
+getent groups | tail -n 1 =to go to last line of group details
+sudo chmod 754 <directory name> =to remove the execution of a file
+sudo chmod 754 <directory name> =to put execution again
+ip a =to check current ip
+sudo apt install apache2 =to install apache2
+cd /var/www/html/
+systemctl status apache2 =to check status of apache2
+sudo touch index.html =to create index.html file
+sudo apt install curl =to install curl
+sudo curl ifconfig.me =to know ip address of ours
+curl <ipaddress> =to host to current ip address
