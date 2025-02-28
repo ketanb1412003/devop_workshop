@@ -1,0 +1,98 @@
+Assignment :-
+1. Write a shell script to create a simple calculator that can perform
+addition, subtraction, multiplication, and division based on user input.
+2. Create two users: harry and jarry.
+3. Create a group named team and add the user harry to the team group.
+4. Set up a cron job that writes the current date and time to mytime.txt
+every 2 hours. The file should be stored in the user's home directory
+(~/mytime.txt).
+
+
+Solution:
+
+1.Code for Simple Calculator.
+#!/bin/bash
+# Simple Calculator Script
+echo "Simple
+Calculator"
+echo "-----------------"
+read -p "Enter first number: "
+num1
+read -p "Enter second number: " num2
+echo "Choose operation:"
+echo
+"1. Addition (+)"
+echo "2. Subtraction (-)"
+echo "3. Multiplication
+(*)"
+echo "4. Division (/)"
+read -p "Enter your choice (1-4): "
+choice
+case $choice in
+1)
+result=$(echo "$num1 + $num2" | bc)
+echo
+"Result: $num1 + $num2 = $result"
+;;
+2)
+result=$(echo "$num1 -
+$num2" | bc)
+echo "Result: $num1 - $num2 = $result"
+;;
+3)
+result=$(echo "$num1 * $num2" | bc)
+echo "Result: $num1 * $num2 =
+$result"
+;;
+4)
+if [[ $num2 -eq 0 ]]; then
+echo "Error: Division by
+zero is not allowed."
+else
+result=$(echo "scale=2; $num1 / $num2" |
+bc) #scale=2 to get 2 decimals.
+echo "Result: $num1 / $num2 = $result"
+fi
+;;
+*)
+echo "Invalid choice. Please enter a number between 1 and 4."
+;;
+esac
+Output:
+Simple Calculator
+Enter first number: 4
+Enter second number: 3
+Choose
+operation:
+1. Addition (+)
+2. Subtraction (-)
+3. Multiplication (*)
+4. Division (/)
+Enter your
+choice (1-4): 2
+Result: 4 - 3 = 1
+2.
+sudo adduser harry
+sudo adduser
+jarry
+Output:
+harry:x:1001:1001:,,,:/home/harry:/bin/bash
+jarry:x:1002:1002:,,,:/home/jarry:/b
+in/bash
+3.
+sudo groupadd team
+sudo usermod -aG team
+harry
+Output:
+team:x:1003:harry
+4.
+crontab -e
+0 */2 * * * date +"%Y-%m-%d %H:%M:%S"
+>> ~/mytime.txt
+cat ~/mytime.txt
+Output:
+2023-10-26 16:00:01
+2023-10-26
+18:00:01
+2023-10-26 20:00:01
+Powered by TCPDF (www.tcpdf.org)
