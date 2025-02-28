@@ -1,0 +1,46 @@
+sudo apt update
+sudo apt install fontconfig openjdk-17-jre
+java -version
+
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc
+\https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \ https://pkg.jenkins.io/debian-stable
+binary/ | sudo tee \ /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+sudo apt-get update
+
+sudo apt-get install jenkins
+
+http://localhost:8080
+
+sudo cat "the var type address shoing in "http://localhost:8080"
+now paste password form teminal to "http://localhost:8080"
+
+then continue
+add username and all details
+save it
+
+sudo usermod -aG docker jenkins
+sudo apt update; sudo apt install docker.io
+
+now login to jenkins with user name and password you give early.
+
+create a new item with final project name
+select freestyle and ok
+select git and add url https://github.com/ketanb1412003/devop_workshop.git
+select POLL SCM
+
+In schedule: * * * * *
+now
+
+addbuild steps: execution shell and add in cammand
+ls
+docker build -t myproject_img .
+docker images
+docker rm -f project
+docker run -d --name project -p 1134:80 myproject_img
+
+then save and build now.
+if green tick then on web browser:
+http://localhost:1133
