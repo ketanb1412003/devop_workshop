@@ -1,3 +1,9 @@
+nano <shell script name>.sh =to create shell script
+./<shell script name>.sh =to access shell script
+sudo chmod 777 <shell script name>.sh =to make shell script executable
+export y=cool =to  make global variable
+cat ~/<file name> =to open a bash file.
+
 Assignment :-
 1. Write a shell script to create a simple calculator that can perform
 addition, subtraction, multiplication, and division based on user input.
