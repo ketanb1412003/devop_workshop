@@ -1,0 +1,23 @@
+kubectl get node
+nano pod.yami
+In file:
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-replicaset
+spec:
+  replicas: 3  # Change this number to scale up/down
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: httpd
+
+ kubectl apply -f pod.yami
+kubectl get pod =output
